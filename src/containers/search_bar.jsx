@@ -11,22 +11,25 @@ class SearchBar extends Component {
         this.setState({term:event.target.value})
     }
 
+    onFormSubmit = (event) =>{
+        event.preventDefault();
+    }
+
     render() {
         return (
             <div>
-                <div className="ui container">
-                    <div className="ui action input">
+                <form onSubmit={this.onFormSubmit} className="ui container" style={{marginTop:"20px"}}>
+                    <div className="ui fluid action input">
                         <input
                             placeholder="Get a five-day forecast in your favorite cities"
                             type="text"
-                            size="75"
                             value={this.state.term}
                             onChange={this.onInputChange}/>
 
                         <button className="ui button">Submit</button>
                     </div>
 
-                </div>
+                </form>
 
             </div>
         );
