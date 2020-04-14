@@ -1,8 +1,20 @@
 import React, { PureComponent } from 'react';
 import {connect} from 'react-redux';
-import { fetchWeather } from '../actions';
+
 
 class WeatherList extends React.Component {
+
+    renderWeather(cityData) {
+        return (
+            <tr key = {cityData.name}>
+                <td>{cityData.name}</td>
+                <td>{cityData.main.temp}</td>
+                <td>{cityData.main.pressure}</td>
+                <td>{cityData.main.humidity}</td>
+            </tr>
+        );
+    }
+
     render() { 
         return (
          <table className="ui selectable celled table">
@@ -15,7 +27,7 @@ class WeatherList extends React.Component {
                 </tr>
              </thead>
              <tbody>
-
+                {this.props.weather.map(this.renderWeather)}
              </tbody>
         </table> );
     }
