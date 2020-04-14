@@ -1,0 +1,8 @@
+.ui.container {
+    margin-top: 20px !important;
+}
+
+td:first-of-type, td:first-of-type>div {
+    height: 233px;
+    width: 350px;
+}

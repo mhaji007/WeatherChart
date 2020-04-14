@@ -25,7 +25,7 @@ class SearchBar extends Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.onFormSubmit} className="ui container" style={{marginTop:"20px"}}>
+                <form onSubmit={this.onFormSubmit} className="ui container">
                     <div className="ui fluid action input">
                         <input
                             placeholder="Get a five-day forecast in your favorite cities"
